@@ -11,13 +11,23 @@ import OBShapedButton
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var firstButton: OBShapedButton!
     @IBOutlet weak var zeroButton: OBShapedButton!
     let stars = [UIImage(named: "star"), UIImage(named: "star-1"), UIImage(named: "star-2"), UIImage(named: "star-3"), UIImage(named: "star-4")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createStars()
+        //createStars()
+        label.animate(newText: "if dayOfYear== 24.11.2018{", characterDelay: 0.25, compleation: {
+            self.createStars()
+        })
+        label2.animate(newText: "print(Поздравляем!!!)", characterDelay: 0.25)
+        label3.animate(newText: "drinkBeer()}", characterDelay: 0.25)
     }
     
     private func createStars() {
@@ -82,4 +92,43 @@ class FirstViewController: UIViewController {
                  "Успехов",
                  "Добра",
                  "Удачи"]
+}
+extension UILabel {
+    func animate(newText: String, characterDelay: TimeInterval, compleation: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            self.text = ""
+            for (index, character) in newText.characters.enumerated() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
+                    self.text?.append(character)
+                    self.fadeTransition(characterDelay)
+                    if index == newText.count-1 {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                            compleation()
+                        })
+
+                    }
+                }
+            }
+        }
+    }
+    func animate(newText: String, characterDelay: TimeInterval) {
+        DispatchQueue.main.async {
+            self.text = ""
+            for (index, character) in newText.characters.enumerated() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
+                    self.text?.append(character)
+                    self.fadeTransition(characterDelay)
+                }
+            }
+        }
+    }
+}
+extension UIView {
+    func fadeTransition(_ duration:CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.type = CATransitionType.fade
+        animation.duration = duration
+        layer.add(animation, forKey: CATransitionType.fade.rawValue)
+    }
 }
