@@ -103,6 +103,9 @@ class BaloonViewController: UIViewController {
             self.greenBaloon.removeFromSuperview()
             self.redBaloon.removeFromSuperview()
 
+            UIView.animate(withDuration: 2, animations: {
+                self.greetingLabel.center = self.view.center
+            })
             UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
                 self.changeSparklesAlpha()
             }, completion: nil)
