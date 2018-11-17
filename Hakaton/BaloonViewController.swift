@@ -27,14 +27,13 @@ class BaloonViewController: UIViewController {
         centerBaloonWidth = centerBaloon.frame.width + 40
         centerBaloonHeight = centerBaloon.frame.height + addheight
 
-        setCenterBaloonImageSize()
+        setDownImagePosition()
+
         view.addSubview(centerBaloon)
 
-        setRedBaloonImageSize()
         view.addSubview(redBaloon)
         view.sendSubviewToBack(redBaloon)
 
-        setGreenBaloonImageSize()
         view.addSubview(greenBaloon)
         view.sendSubviewToBack(greenBaloon)
 
@@ -58,21 +57,6 @@ class BaloonViewController: UIViewController {
         imagesAnimation()
     }
 
-    func setCenterBaloonImageSize() {
-        centerBaloon.frame.size = CGSize(width: centerBaloonWidth, height: centerBaloonHeight)
-        centerBaloon.frame.origin.x = (view.frame.width - centerBaloon.frame.width) / 2
-        centerBaloon.frame.origin.y = (view.frame.height - centerBaloon.frame.height) / 2
-    }
-
-    func setRedBaloonImageSize() {
-        redBaloon.frame.origin.x = centerBaloon.frame.origin.x - redBaloon.frame.width  + 150
-        redBaloon.frame.origin.y = (view.frame.height - redBaloon.frame.height) / 2
-    }
-
-    func setGreenBaloonImageSize() {
-        greenBaloon.frame = CGRect(x: centerBaloon.frame.origin.x + centerBaloon.frame.width  - 150, y: (view.frame.height - redBaloon.frame.height) / 2, width: redBaloon.frame.width, height: redBaloon.frame.height)
-    }
-
     func setDownImagePosition() {
         centerBaloon.frame.origin.x = (view.frame.width - centerBaloon.frame.width) / 2
         centerBaloon.frame.origin.y = view.frame.height - centerBaloon.frame.height + 50
@@ -94,8 +78,9 @@ class BaloonViewController: UIViewController {
                 }
             }
         }) { (result) in
-            self.setDownImagePosition()
-            self.imagesAnimation()
+            self.centerBaloon.removeFromSuperview()
+            self.greenBaloon.removeFromSuperview()
+            self.redBaloon.removeFromSuperview()
         }
     }
 }

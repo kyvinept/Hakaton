@@ -39,12 +39,19 @@ class FirstViewController: UIViewController {
     
 
     @IBAction func firstAction(_ sender: Any) {
-        print("1")
+        pushBaloons()
 
     }
 
     @IBAction func zeroAction(_ sender: Any) {
-         print("0")
+         pushBaloons()
+    }
+
+    func pushBaloons() {
+        let VControl = UIStoryboard.init(name: "Baloons",
+                                         bundle: nil ).instantiateViewController(
+                                            withIdentifier: "BaloonViewController")
+        self.navigationController?.pushViewController(VControl, animated: true)
     }
 
     @IBAction func iphoneAction(_ sender: Any) {
