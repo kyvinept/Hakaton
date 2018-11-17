@@ -19,6 +19,9 @@ class BaloonViewController: UIViewController {
 
     var sparkles: [UIImageView] = []
 
+    var greetingLabel = UILabel()
+    var isLabelAdded: Bool = false
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -50,10 +53,19 @@ class BaloonViewController: UIViewController {
                 view.sendSubviewToBack(sparkle)
             }
         }
+
+        greetingLabel.text = "IPhone X – стал самым ожидаемый телефоном 2017 года. Его утонченный дизайн, многофункциональность, а также возможности – покорили сердца многих. Нашему отделу уже 10 лет, мы надеемся, что будет еще больше интересных проектов, количество разработчиков будет только увеличиваться, а качество продукции станет лучшим на рынке."
+        greetingLabel.numberOfLines = 0
+        greetingLabel.textAlignment = .center
+        greetingLabel.font = greetingLabel.font.withSize(20)
+        greetingLabel.frame.size = CGSize(width: 300, height: 500)
+        greetingLabel.frame.origin.x = (view.frame.width - 300) / 2
+        greetingLabel.frame.origin.y = view.frame.height
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.addSubview(greetingLabel)
         imagesAnimation()
     }
 
@@ -65,6 +77,12 @@ class BaloonViewController: UIViewController {
         greenBaloon.frame = CGRect(x: centerBaloon.frame.origin.x + centerBaloon.frame.width  - 150, y: view.frame.height - redBaloon.frame.height + 50, width: redBaloon.frame.width, height: redBaloon.frame.height)
     }
 
+    func changeSparklesAlpha() {
+        for sparkle in self.sparkles {
+            sparkle.alpha = CGFloat.random(in: 0...1)
+        }
+    }
+
     func imagesAnimation() {
         UIView.animate(withDuration: 5, animations: {
             while (self.centerBaloon.frame.origin.y > -150 || self.greenBaloon.frame.origin.y > -150 || self.redBaloon.frame.origin.y > -150) {
@@ -73,14 +91,21 @@ class BaloonViewController: UIViewController {
                 self.greenBaloon.frame.origin.x += 1
                 self.redBaloon.frame.origin.y -= 6
                 self.redBaloon.frame.origin.x -= 1
-                for sparkle in self.sparkles {
-                    sparkle.alpha = CGFloat.random(in: 0...1)
+                self.changeSparklesAlpha()
+                self.greetingLabel.frame.origin.y = self.centerBaloon.frame.origin.y + self.centerBaloon.frame.height
+                if (!self.isLabelAdded) {
+                    self.view.addSubview(self.greetingLabel)
+                    self.isLabelAdded = true
                 }
             }
         }) { (result) in
             self.centerBaloon.removeFromSuperview()
             self.greenBaloon.removeFromSuperview()
             self.redBaloon.removeFromSuperview()
+
+            UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
+                self.changeSparklesAlpha()
+            }, completion: nil)
         }
     }
 }
