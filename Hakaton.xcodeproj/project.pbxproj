@@ -11,14 +11,10 @@
 		5B3FB28E21A0092300B558B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3FB28D21A0092300B558B1 /* ViewController.swift */; };
 		5B3FB29121A0092300B558B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3FB28F21A0092300B558B1 /* Main.storyboard */; };
 		5B3FB29621A0092500B558B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3FB29421A0092500B558B1 /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
-		5B3FB2A821A0175400B558B1 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3FB2A721A0175400B558B1 /* Star.swift */; };
-=======
 		972276DC1A1465F6F753C8C3 /* Pods_Hakaton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAE6F49ECD7C5AF4C9E481E /* Pods_Hakaton.framework */; };
 		DE16054E21A0177C00AD12A9 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE16054D21A0177C00AD12A9 /* First.storyboard */; };
 		DE16055021A017A800AD12A9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16054F21A017A800AD12A9 /* FirstViewController.swift */; };
 		DE16055221A01ED700AD12A9 /* AssetsFirst.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE16055121A01ED700AD12A9 /* AssetsFirst.xcassets */; };
->>>>>>> develop
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,15 +25,11 @@
 		5B3FB29021A0092300B558B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B3FB29521A0092500B558B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B3FB29721A0092500B558B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		5B3FB2A721A0175400B558B1 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
-=======
 		A336F400720798C0ECD91679 /* Pods-Hakaton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakaton.release.xcconfig"; path = "Target Support Files/Pods-Hakaton/Pods-Hakaton.release.xcconfig"; sourceTree = "<group>"; };
 		DE16054D21A0177C00AD12A9 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
 		DE16054F21A017A800AD12A9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DE16055121A01ED700AD12A9 /* AssetsFirst.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsFirst.xcassets; sourceTree = "<group>"; };
 		F5EFB223F2A4CCBB0C90A375 /* Pods-Hakaton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakaton.debug.xcconfig"; path = "Target Support Files/Pods-Hakaton/Pods-Hakaton.debug.xcconfig"; sourceTree = "<group>"; };
->>>>>>> develop
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +79,8 @@
 				5B3FB29421A0092500B558B1 /* LaunchScreen.storyboard */,
 				DE16055121A01ED700AD12A9 /* AssetsFirst.xcassets */,
 				5B3FB29721A0092500B558B1 /* Info.plist */,
-<<<<<<< HEAD
-				5B3FB2A721A0175400B558B1 /* Star.swift */,
-=======
 				DE16054D21A0177C00AD12A9 /* First.storyboard */,
 				DE16054F21A017A800AD12A9 /* FirstViewController.swift */,
->>>>>>> develop
 			);
 			path = Hakaton;
 			sourceTree = "<group>";
@@ -227,11 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				5B3FB2A821A0175400B558B1 /* Star.swift in Sources */,
-=======
 				DE16055021A017A800AD12A9 /* FirstViewController.swift in Sources */,
->>>>>>> develop
 				5B3FB28E21A0092300B558B1 /* ViewController.swift in Sources */,
 				5B3FB28C21A0092300B558B1 /* AppDelegate.swift in Sources */,
 			);
