@@ -1,0 +1,16 @@
+PODS:
+  - OBShapedButton (1.1.0)
+
+DEPENDENCIES:
+  - OBShapedButton
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - OBShapedButton
+
+SPEC CHECKSUMS:
+  OBShapedButton: 90c414c04454ca25f067deaa91393c221b8721cf
+
+PODFILE CHECKSUM: a0e7d9a1dccd036a376c7062bdcd1e394968614c
+
+COCOAPODS: 1.6.0.beta.2
