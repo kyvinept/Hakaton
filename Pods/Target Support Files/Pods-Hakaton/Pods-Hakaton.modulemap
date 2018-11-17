@@ -1,0 +1,6 @@
+framework module Pods_Hakaton {
+  umbrella header "Pods-Hakaton-umbrella.h"
+
+  export *
+  module * { export * }
+}

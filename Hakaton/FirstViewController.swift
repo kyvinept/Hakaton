@@ -34,8 +34,8 @@ class FirstViewController: UIViewController {
         let index = Int.random(in: 0..<array.count)
         print(array[index])
 
-        let alert = UIAlertController(title: "Alert", message: array[index], preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+        let alert = UIAlertController(title: array[index], message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         var imageView = UIImageView(frame: CGRect(x: 220, y: 10, width: 40, height: 40))
         imageView.image = UIImage(named: "nixLogo")
