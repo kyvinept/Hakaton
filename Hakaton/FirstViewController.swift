@@ -19,15 +19,33 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var firstButton: OBShapedButton!
     @IBOutlet weak var zeroButton: OBShapedButton!
     let stars = [UIImage(named: "star"), UIImage(named: "star-1"), UIImage(named: "star-2"), UIImage(named: "star-3"), UIImage(named: "star-4")]
+    var isShowed: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //createStars()
+        //createStars(
         label.animate(newText: "if dayOfYear== 24.11.2018{", characterDelay: 0.25, compleation: {
             self.createStars()
+            self.isShowed = true
         })
         label2.animate(newText: "print(Поздравляем!!!)", characterDelay: 0.25)
         label3.animate(newText: "drinkBeer()}", characterDelay: 0.25)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isShowed {
+            self.createStars()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        for view in self.view.subviews {
+            if let imageView = view as? UIImageView, imageView.image != UIImage(named: "backgroundFirst") {
+                imageView.removeFromSuperview()
+            }
+        }
     }
     
     private func createStars() {
